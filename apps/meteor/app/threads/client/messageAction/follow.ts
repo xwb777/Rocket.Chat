@@ -18,7 +18,7 @@ Meteor.startup(function () {
 			id: 'follow-message',
 			icon: 'bell',
 			label: 'Follow_message',
-			context: ['message', 'message-mobile', 'threads', 'federated'],
+			context: ['message', 'message-mobile', 'threads', 'federated', 'videoconf'],
 			async action(_, { message }) {
 				if (!message) {
 					return;
