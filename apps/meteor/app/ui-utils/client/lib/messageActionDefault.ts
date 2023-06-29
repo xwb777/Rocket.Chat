@@ -119,7 +119,7 @@ Meteor.startup(async function () {
 		icon: 'permalink',
 		label: 'Get_link',
 		// classes: 'clipboard',
-		context: ['message', 'message-mobile', 'threads', 'federated'],
+		context: ['message', 'message-mobile', 'threads', 'federated', 'videoconf'],
 		async action(_, props) {
 			try {
 				const { message = messageArgs(this).msg } = props;
@@ -202,7 +202,7 @@ Meteor.startup(async function () {
 		id: 'delete-message',
 		icon: 'trash',
 		label: 'Delete',
-		context: ['message', 'message-mobile', 'threads', 'federated'],
+		context: ['message', 'message-mobile', 'threads', 'federated', 'videoconf'],
 		color: 'alert',
 		async action(this: unknown, _, { message = messageArgs(this).msg, chat }) {
 			await chat?.flows.requestMessageDeletion(message);
@@ -229,7 +229,7 @@ Meteor.startup(async function () {
 		id: 'report-message',
 		icon: 'report',
 		label: 'Report',
-		context: ['message', 'message-mobile', 'threads', 'federated'],
+		context: ['message', 'message-mobile', 'threads', 'federated', 'videoconf'],
 		color: 'alert',
 		action(this: unknown, _, { message = messageArgs(this).msg }) {
 			imperativeModal.open({
@@ -255,7 +255,7 @@ Meteor.startup(async function () {
 		id: 'reaction-list',
 		icon: 'emoji',
 		label: 'Reactions',
-		context: ['message', 'message-mobile', 'threads'],
+		context: ['message', 'message-mobile', 'threads', 'videoconf'],
 		action(this: unknown, _, { message: { reactions = {} } = messageArgs(this).msg }) {
 			imperativeModal.open({
 				component: ReactionList,
