@@ -1,5 +1,5 @@
 import type { IMessage, IRoom, ISubscription, ITranslatedMessage } from '@rocket.chat/core-typings';
-import { isThreadMessage, isRoomFederated } from '@rocket.chat/core-typings';
+import { isThreadMessage, isRoomFederated, isVideoConfMessage } from '@rocket.chat/core-typings';
 import { MessageToolbox, MessageToolboxItem } from '@rocket.chat/fuselage';
 import { useUser, useSettings, useTranslation } from '@rocket.chat/ui-contexts';
 import { useQuery } from '@tanstack/react-query';
@@ -22,7 +22,7 @@ const getMessageContext = (message: IMessage, room: IRoom, context?: MessageActi
 		return context;
 	}
 
-	if (message.t === 'videoconf') {
+	if (isVideoConfMessage(message)) {
 		return 'videoconf';
 	}
 
