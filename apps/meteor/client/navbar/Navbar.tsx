@@ -1,8 +1,9 @@
-import { IconButton } from '@rocket.chat/fuselage';
+import { Box, IconButton } from '@rocket.chat/fuselage';
 import React from 'react';
 
 import NavbarComponent from '../components/Navbar/Navbar';
 // import UserAvatarButton from './UserAvatarButton';
+import UserAvatarButton from '../sidebar/header/UserAvatarButton';
 import NavbarHomeAction from './actions/NavbarHomeAction';
 import NavbarMarketplaceAction from './actions/NavbarMarketplaceAction';
 
@@ -11,9 +12,9 @@ const Navbar = () => {
 
 	return (
 		<NavbarComponent>
-			{/* <Box is='li' mbe='x16' role='menuitem'>
+			<li role='menuitem'>
 				<UserAvatarButton />
-			</Box> */}
+			</li>
 			<NavbarHomeAction />
 			{/* <li role='menuitem'>
 				<IconButton medium icon='home' aria-label='home' />
